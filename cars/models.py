@@ -1,7 +1,8 @@
 from datetime import datetime
+from ckeditor.fields import RichTextField
+from multiselectfield import MultiSelectField
 
 from django.db import models
-
 # Create your models here.
 class Car(models.Model):
     state_choice = (
@@ -41,14 +42,14 @@ class Car(models.Model):
     model = models.CharField(max_length=250)
     year = models.IntegerField('year', choices=year_choice)
     condition = models.CharField(max_length=250)
-    description = models.TextField(max_length=500)
+    description = RichTextField()
     price = models.IntegerField
     car_photo = models.ImageField(upload_to='photos/%y/%m/%d/')
     car_photo1 = models.ImageField(upload_to='photos/%y/%m/%d/', blank=True)
     car_photo2 = models.ImageField(upload_to='photos/%y/%m/%d/', blank=True)
     car_photo3 = models.ImageField(upload_to='photos/%y/%m/%d/', blank=True)
     car_photo4 = models.ImageField(upload_to='photos/%y/%m/%d/', blank=True)
-    feautures = models.CharField(choices=features_choice, max_length=250)
+    feautures = MultiSelectField(choices=features_choice)
     body_style = models.CharField(max_length=250)
     engine = models.CharField(max_length=250)
     transmision = models.CharField(max_length=250)
