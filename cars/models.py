@@ -3,6 +3,8 @@ from ckeditor.fields import RichTextField
 from multiselectfield import MultiSelectField
 
 from django.db import models
+
+
 # Create your models here.
 class Car(models.Model):
     state_choice = (
@@ -64,3 +66,5 @@ class Car(models.Model):
     is_featured = models.BooleanField(max_length=250)
     created_date = models.DateTimeField(default=datetime.now, blank=True)
 
+    def __str__(self):
+        return self.car_title
