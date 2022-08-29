@@ -1,7 +1,6 @@
 from datetime import datetime
 from ckeditor.fields import RichTextField
 from multiselectfield import MultiSelectField
-
 from django.db import models
 
 

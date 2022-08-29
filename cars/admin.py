@@ -15,6 +15,6 @@ class CarAdmin(admin.ModelAdmin):
     list_display_links = ('id', 'pic', 'car_title')
     list_editable = ('is_featured',)
     search_fields = ('car_title', 'year', 'city')
-    list_filter = ('city','model')
+    list_filter = ('city','model','car_title')
 
 admin.site.register(Car, CarAdmin)
