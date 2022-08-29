@@ -7,10 +7,10 @@ from pages.models import Team
 
 
 class TeamAdmin(admin.ModelAdmin):
-    def photo(self,object):
+    def pic(self,object):
         return format_html('<img src ="{}" width = "40px" style="border-radius:50px"/>'.format(object.image.url))
-    list_display = ('id', 'First_Name', 'Last_Name', 'Designations', 'Date', 'photo')
-    list_display_links = ('id', 'First_Name','Last_Name','photo')
+    list_display = ('id', 'First_Name', 'Last_Name', 'Designations', 'Date', 'pic')
+    list_display_links = ('id', 'First_Name','Last_Name','pic')
     search_fields = ('First_Name', 'Designations')
     list_filter = ('Designations',)
 
